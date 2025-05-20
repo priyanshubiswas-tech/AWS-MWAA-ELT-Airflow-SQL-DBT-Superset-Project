@@ -1,4 +1,3 @@
-# AWS-MWAA-Airflow-SQL-DBT-Superset-Project
 # 📊 AWS MWAA ETL Pipeline with dbt  
 
 **Automated Data Pipeline for Ticket Analytics**  
@@ -135,29 +134,4 @@ with DAG(dag_id='ticket_analytics', schedule_interval='@daily') as dag:
 
 ---
 
-## 📈 Next Steps  
 
-1. Add data quality tests in dbt  
-2. Set up alerts for failed runs  
-3. Build Looker/Tableau dashboards  
-
----
-
-## 👨‍💻 Author  
-[Your Name]  
-[Your Contact Info]  
-
-```bash
-# Like this project? Give it a ⭐!
-# Want to contribute? Open a PR!
-```  
-
----
-
-This README:  
-✅ Explains the **what, why, and how**  
-✅ Uses **visuals and code snippets**  
-✅ Includes **troubleshooting** tips  
-✅ Highlights **business value**  
-
-Would you like me to add anything specific about your implementation? 😊
