@@ -27,7 +27,7 @@ graph TD
 ---
 
 ##  Project Structure  
-<img src="Media/Airflow DAG success.png" alt="DAG Success" width="100%" />
+<img src="Media/dag folder contents.png" alt="AWS DAG Folder Contents" width="100%" />
 ```bash
 s3://your-bucket-name/
 ├── dags/                          # Airflow DAGs
