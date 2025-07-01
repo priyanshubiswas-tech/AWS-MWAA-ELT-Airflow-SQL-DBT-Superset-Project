@@ -1,19 +1,19 @@
-# 📊 AWS MWAA ETL Pipeline with dbt  
+# AWS MWAA ETL Pipeline with dbt  
 
 **Automated Data Pipeline for Ticket Analytics**  
 *Extract ticket data from S3 → Load to PostgreSQL → Transform with dbt → Schedule with Airflow*  
 
 ---
 
-## 🌟 Key Features  
-✅ **End-to-End Automation** - From raw CSV to analytics-ready tables  
-✅ **Modern Data Stack** - Airflow + dbt + PostgreSQL on AWS  
-✅ **Production-Ready** - Error handling, retries, and validation  
-✅ **Scalable Architecture** - Built on AWS MWAA (Managed Workflows for Apache Airflow)  
+##  Key Features  
+- **End-to-End Automation** - From raw CSV to analytics-ready tables  
+- **Modern Data Stack** - Airflow + dbt + PostgreSQL on AWS  
+- **Production-Ready** - Error handling, retries, and validation  
+- **Scalable Architecture** - Built on AWS MWAA (Managed Workflows for Apache Airflow)  
 
 ---
 
-## 🏗️ Architecture  
+##  Architecture  
 ```mermaid  
 graph TD  
     A[S3 Bucket] -->|CSV File| B(Airflow DAG)  
@@ -24,7 +24,7 @@ graph TD
 
 ---
 
-## 📂 Project Structure  
+##  Project Structure  
 ```bash
 s3://your-bucket-name/
 ├── dags/                          # Airflow DAGs
@@ -44,9 +44,9 @@ s3://your-bucket-name/
 
 ---
 
-## 🛠️ How It Works  
+##  How It Works  
 
-### 1️⃣ Extract: Get Data from S3  
+### 1️ Extract: Get Data from S3  
 ```python
 def download_from_s3():
     s3_hook = S3Hook(aws_conn_id='aws_default')
@@ -93,7 +93,7 @@ with DAG(dag_id='ticket_analytics', schedule_interval='@daily') as dag:
 
 ---
 
-## 🚀 Deployment  
+##  Deployment  
 
 ### AWS MWAA Setup  
 1. Upload to S3:  
@@ -110,21 +110,21 @@ with DAG(dag_id='ticket_analytics', schedule_interval='@daily') as dag:
 
 ---
 
-## 💡 Why This Matters  
+##  Why This Matters  
 
 ### Business Impact  
-📈 **Data-Driven Decisions** - Clean, reliable metrics for ticket management  
-⏱️ **Time Savings** - Eliminates manual CSV processing  
-🔍 **Data Quality** - dbt tests catch anomalies  
+- **Data-Driven Decisions** - Clean, reliable metrics for ticket management  
+- **Time Savings** - Eliminates manual CSV processing  
+- **Data Quality** - dbt tests catch anomalies  
 
 ### Technical Value  
-🐍 **Pythonic** - Clean, maintainable code  
-🔗 **Modular** - Easy to add new data sources  
-☁️ **Cloud-Native** - Fully managed AWS services  
+- **Pythonic** - Clean, maintainable code  
+- **Modular** - Easy to add new data sources  
+- **Cloud-Native** - Fully managed AWS services  
 
 ---
 
-## 🛠 Troubleshooting  
+##  Troubleshooting  
 
 | Error | Solution |
 |-------|----------|
