@@ -66,7 +66,7 @@ def load_to_postgres():
 - Bulk loads data using PostgreSQL's `COPY` command  
 - Handles large datasets efficiently  
 
-### 3️⃣ Transform: dbt Magic  
+### 3️⃣ Transform: dbt transformations  
 ```bash
 # Runs these dbt models:
 models/
@@ -100,13 +100,12 @@ with DAG(dag_id='ticket_analytics', schedule_interval='@daily') as dag:
    ```bash
    aws s3 sync . s3://your-bucket-name/dags/
    ```
-2. Ensure `requirements.txt` has:  
+2. `requirements.txt` structure:  
    ```text
    dbt-core==1.5.0
    dbt-postgres==1.5.0
    apache-airflow-providers-amazon==8.7.0
-   ```
-3. Reboot MWAA environment after upload  
+   ``` 
 
 ---
 
