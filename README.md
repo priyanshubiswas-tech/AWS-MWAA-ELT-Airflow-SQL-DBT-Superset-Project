@@ -33,7 +33,7 @@ graph TD
 <img src="media/dag folder contents.png" alt="AWS DAG Folder Contents" width="100%" />
 
 ```bash
-s3://your-bucket-name/
+s3://priyanshu-airflow-dag-bucket/
 ├── dags/                          # Airflow DAGs
 │   ├── requirements.txt           # Python dependencies
 │   ├── etl_pipeline.py            # Main DAG file
@@ -61,7 +61,7 @@ s3://your-bucket-name/
 ```python
 def download_from_s3():
     s3_hook = S3Hook(aws_conn_id='aws_default')
-    file_obj = s3_hook.get_key(bucket_name="my-bucket", key="ticket_dump.csv")
+    file_obj = s3_hook.get_key(bucket_name="priyanshu-airflow-dag-bucket", key="ticket_dump.csv")
     file_obj.download_fileobj('/tmp/data.csv')
 ```
 - Uses Airflow's `S3Hook` to fetch CSV  
@@ -91,7 +91,7 @@ models/
 
 ### 4️⃣ Orchestrate: Airflow DAG  
 ```python
-with DAG(dag_id='ticket_analytics', schedule_interval='@daily') as dag:
+with DAG(dag_id='awsmwaa', schedule_interval='@daily') as dag:
     extract = PythonOperator(task_id='extract', python_callable=download_from_s3)
     load = PythonOperator(task_id='load', python_callable=load_to_postgres)
     transform = BashOperator(task_id='transform', bash_command="dbt run")
@@ -109,7 +109,7 @@ with DAG(dag_id='ticket_analytics', schedule_interval='@daily') as dag:
 ### AWS MWAA Setup  
 1. Upload to S3:  
    ```bash
-   aws s3 sync . s3://your-bucket-name/dags/
+   aws s3 sync . s3://priyanshu-airflow-dag-bucket/dags/
    ```
 2. `requirements.txt` structure:  
    ```text
