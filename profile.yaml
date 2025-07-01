@@ -1,0 +1,12 @@
+demo:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "your-rds-endpoint.rds.amazonaws.com"
+      user: postgres
+      password: "f6kUBL0IJo|1Ljd#40smqN#k!EEE"
+      port: 5432
+      dbname: postgres
+      schema: public
+      threads: 4
