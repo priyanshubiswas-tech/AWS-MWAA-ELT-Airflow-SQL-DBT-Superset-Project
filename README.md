@@ -1,4 +1,4 @@
-# AWS MWAA ETL Pipeline with dbt  
+# AWS MWAA ELT Pipeline with dbt  
 This repository is an **extension of** the original project: [Airflow_DBT_Superset_Project](https://github.com/priyanshubiswas-tech/Airflow_DBT_Superset_Project.git).  
 The **dataset used remains the same**, but this repository builds upon and enhances the original pipeline with additional features, improvements, or alternate implementations.
 
