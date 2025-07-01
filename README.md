@@ -54,10 +54,13 @@ s3://priyanshu-airflow-dag-bucket/
 > Please make sure to manage your own endpoint details and AWS-specific dependencies accordingly.
 
 ---
+##  Apache Superset
+
+<img src="media/dag folder contents.png" alt="AWS DAG Folder Contents" width="100%" />
 
 ##  How It Works  
 
-### 1️ Extract: Get Data from S3  
+### 1. Extract: Get Data from S3  
 ```python
 def download_from_s3():
     s3_hook = S3Hook(aws_conn_id='aws_default')
@@ -67,7 +70,7 @@ def download_from_s3():
 - Uses Airflow's `S3Hook` to fetch CSV  
 - Saves to local `/tmp/` for processing  
 
-### 2️⃣ Load: Import to PostgreSQL  
+### 2. Load: Import to PostgreSQL  
 ```python
 def load_to_postgres():
     pg_hook = PostgresHook(postgres_conn_id='postgres_rds')
@@ -77,7 +80,7 @@ def load_to_postgres():
 - Bulk loads data using PostgreSQL's `COPY` command  
 - Handles large datasets efficiently  
 
-### 3️⃣ Transform: dbt transformations  
+### 3. Transform: dbt transformations  
 ```bash
 # Runs these dbt models:
 models/
@@ -89,9 +92,9 @@ models/
 - Calculates business metrics  
 - Creates analytics-ready tables  
 
-### 4️⃣ Orchestrate: Airflow DAG  
+### 4. Orchestrate: Airflow DAG  
 ```python
-with DAG(dag_id='awsmwaa', schedule_interval='@daily') as dag:
+with DAG(dag_id='aws_mwaa_etl_pipeline_production', schedule_interval='@daily') as dag:
     extract = PythonOperator(task_id='extract', python_callable=download_from_s3)
     load = PythonOperator(task_id='load', python_callable=load_to_postgres)
     transform = BashOperator(task_id='transform', bash_command="dbt run")
