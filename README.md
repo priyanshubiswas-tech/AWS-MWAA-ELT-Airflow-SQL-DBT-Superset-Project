@@ -56,7 +56,7 @@ s3://priyanshu-airflow-dag-bucket/
 ---
 ##  Apache Superset
 
-<img src="media/dag folder contents.png" alt="AWS DAG Folder Contents" width="100%" />
+<img src="media/Apache Superset Dashboard.png" alt="AWS DAG Folder Contents" width="50%" />
 
 ##  How It Works  
 
