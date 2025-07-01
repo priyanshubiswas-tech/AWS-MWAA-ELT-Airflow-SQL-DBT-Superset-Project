@@ -47,7 +47,7 @@ s3://your-bucket-name/
 └── ticket_dump.csv                # Source data
 ```
 > **Note:** The AWS resources (Airflow environment, S3 bucket, etc.) used in the original project have been deleted as the tasks were time-bound and are now completed.  
-> This repository does not follow the exact same file structure as the original—some files such as `schema.yml` and certain DBT models are not included.  
+> This repository does not follow the exact same file structure as the original. Some files such as `schema.yml` and certain DBT models are not included.  
 > Since this is an extension of the [Airflow_DBT_Superset_Project](https://github.com/priyanshubiswas-tech/Airflow_DBT_Superset_Project.git), you can refer to that repository to access the original models and configurations.  
 > Please make sure to manage your own endpoint details and AWS-specific dependencies accordingly.
 
