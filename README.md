@@ -5,7 +5,8 @@ The **dataset used remains the same**, but this repository builds upon and enhan
 **Automated Data Pipeline for Ticket Analytics**  
 *Extract ticket data from S3 → Load to PostgreSQL → Transform with dbt → Schedule with Airflow*  
 
-<img src="media/Project Setup2.png" alt="AWS DAG Folder Contents" width="100%" />
+<img src="media/Airflow Graph1.png" alt="AWS DAG Folder Contents" width="100%" />
+
 ---
 
 ##  Key Features  
